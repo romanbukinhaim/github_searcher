@@ -17,15 +17,15 @@ class RepositoryModel {
   @JsonKey(name: 'updated_at', nullable: false)
   final DateTime updatedAt;
 
-  @JsonKey(name: 'score', nullable: false)
-  final double score;
+  @JsonKey(name: 'stargazers_count', nullable: false)
+  final int stars;
 
   const RepositoryModel({
     this.id,
     this.name,
     this.owner,
     this.updatedAt,
-    this.score,
+    this.stars,
   });
 
   factory RepositoryModel.fromJson(Map<String, dynamic> json) => _$RepositoryModelFromJson(json);

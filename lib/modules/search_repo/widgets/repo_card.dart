@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:github_searcher/domain/models/repository_model.dart';
 import 'package:github_searcher/generated/l10n.dart';
 import 'package:github_searcher/theme/colors.dart';
+import 'package:intl/intl.dart';
 import 'package:jiffy/jiffy.dart';
 
 class RepoCard extends StatelessWidget {
   final RepositoryModel data;
+  final NumberFormat numberCompact = NumberFormat.compact(locale: 'en_US');
 
-  const RepoCard(this.data);
+  RepoCard(this.data);
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,7 @@ class RepoCard extends StatelessWidget {
                       ),
                       const SizedBox(width: 6.0),
                       Text(
-                        data.score.round().toString(),
+                        numberCompact.format(data.stars),
                         style: TextStyle(color: AppColors.white, fontWeight: FontWeight.bold),
                       ),
                     ],

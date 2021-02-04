@@ -12,7 +12,7 @@ RepositoryModel _$RepositoryModelFromJson(Map<String, dynamic> json) {
     name: json['name'] as String,
     owner: OwnerModel.fromJson(json['owner'] as Map<String, dynamic>),
     updatedAt: DateTime.parse(json['updated_at'] as String),
-    score: (json['score'] as num).toDouble(),
+    stars: json['stargazers_count'] as int,
   );
 }
 
@@ -22,5 +22,5 @@ Map<String, dynamic> _$RepositoryModelToJson(RepositoryModel instance) =>
       'name': instance.name,
       'owner': instance.owner,
       'updated_at': instance.updatedAt.toIso8601String(),
-      'score': instance.score,
+      'stargazers_count': instance.stars,
     };
