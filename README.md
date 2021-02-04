@@ -2,8 +2,8 @@
 
 A new Flutter project.
 
-![](images/1.png)
-![](images/2.png)
+![1](/images/1.png)
+![2](/images/2.png)
 
 Кодо-генерация: 
 ``` flutter packages pub run build_runner build --delete-conflicting-outputs ```
